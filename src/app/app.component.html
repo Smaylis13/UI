@@ -7,10 +7,21 @@
         ]" [values]="values" ></app-datatable>
 
 
-<p-dataTable [value]="values" scrollable="true" scrollHeight="200px" [rows]="20" virtualScroll="virtualScroll" [style]="{'margin-top':'30px'}" [loading]="loading">
-  <p-header>Virtual Scrolling - 250K Rows</p-header>
-  <p-column field="vin" header="Vin"></p-column>
-  <p-column field="year" header="Year"></p-column>
-  <p-column field="brand" header="Brand"></p-column>
-  <p-column field="color" header="Color"></p-column>
-</p-dataTable>
+<app-table [columns]="cols" [value]="values" [scrollable]="true" [rows]="10">
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns">
+        {{col.header}}
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr>
+      <td *ngFor="let col of columns">
+        {{rowData[col.field]}}
+      </td>
+    </tr>
+  </ng-template>
+</app-table>
+
+<app-test></app-test>

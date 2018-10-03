@@ -1,23 +1,26 @@
+///<reference path="../../node_modules/primeng/components/inputtext/inputtext.d.ts"/>
+///<reference path="../../node_modules/primeng/components/common/confirmationservice.d.ts"/>
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {TableModule} from 'primeng/table';
-import {DatatableComponent} from './datatable/datatable/datatable.component';
-import {DataTableModule} from 'primeng/primeng';
+import {TestComponent} from './datatable/test/test.component';
+
+import {DatatableModule} from './datatable/datatable.module';
+import {TableComponent} from './datatable/datatable/datatable.component';
+
 @NgModule({
   declarations: [
-    AppComponent,
-    DatatableComponent
-  ],
+    AppComponent, TestComponent, TableComponent],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    TableModule,
-    DataTableModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    DatatableModule
+    ],
+  providers: [ ],
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  exports: []
 })
-export class AppModule { }
+export class AppModule {
+
+}

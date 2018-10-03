@@ -21,4 +21,11 @@ export class AppComponent {
     {'brand': 'Renault', 'year': 2005, 'color': 'Gray', 'vin': 'h354htr'},
     {'brand': 'BMW', 'year': 2003, 'color': 'Blue', 'vin': 'j6w54qgh'}
   ];
+
+  cols = [
+    { field: 'vin', header: 'Vin' },
+    { field: 'year', header: 'Year' },
+    { field: 'brand', header: 'Brand' },
+    { field: 'color', header: 'Color' }
+  ];
 }
